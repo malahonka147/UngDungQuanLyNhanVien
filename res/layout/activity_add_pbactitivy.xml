@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btnLuuPB"
         android:layout_alignBottom="@+id/btnLuuPB"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="62dp"
+        android:layout_alignRight="@+id/edtTenPB"
+        android:layout_marginRight="22dp"
         android:text="Hủy" />
 
 </RelativeLayout>

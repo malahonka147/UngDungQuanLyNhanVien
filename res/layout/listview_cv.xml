@@ -3,9 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#C0C0C0" >
-
-    <ImageView
+    android:background="#C0C0C0"  >
+     <ImageView
         android:id="@+id/imgHinhDaiDien"
         android:layout_width="100dp"
         android:layout_height="80dp" />
@@ -22,21 +21,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ID:"
-            android:textSize="16sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/txtTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tên:"
-            android:textSize="16sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/txtSDT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SDT:"
-            android:textSize="16sp" />
+            android:textSize="10sp" />
 
         
     </LinearLayout>

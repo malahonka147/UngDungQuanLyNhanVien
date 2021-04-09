@@ -2,8 +2,10 @@ package com.example.qlnhanvien;
 
 import java.util.ArrayList;
 
+import android.R.string;
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class PhongBanAdapter extends BaseAdapter {
-	
+	final String DATABASE_NAME="QLNV.db";
 	Activity context;
 	ArrayList<PhongBan> listPB;
 	ListView listViewPB;
@@ -52,20 +54,28 @@ public class PhongBanAdapter extends BaseAdapter {
 		TextView txtidPB=(TextView) row.findViewById(R.id.txtIDPB);
 		TextView txtTenPB=(TextView) row.findViewById(R.id.txtTenPB);
 		TextView txtTP=(TextView) row.findViewById(R.id.txtTP);
-		TextView txtPP=(TextView) row.findViewById(R.id.txtPB);
+		TextView txtPP=(TextView) row.findViewById(R.id.txtPP);
 		
 		final PhongBan phongBan=listPB.get(position);
-		txtidPB.setText(txtidPB.getText()+" "+phongBan.id+"");
-		txtTenPB.setText(txtTenPB.getText()+" "+phongBan.TenPB+"");
+		txtidPB.setText(" "+phongBan.id+"");
+		txtTenPB.setText(" "+phongBan.TenPB);
 		if(phongBan.idTP==0){
-			txtTP.setText(txtTP.getText()+" Chưa có");
+			txtTP.setText(" Chưa có");
 		}else{
-			txtTP.setText(txtTP.getText()+" "+phongBan.idTP+"");
+			SQLiteDatabase database=Database.initDatabase(context, DATABASE_NAME);
+			Cursor cursor=database.rawQuery("select Ten from NhanVien where ID=?", new String[]{phongBan.idTP+""});
+			cursor.moveToFirst();
+			String tenTP=cursor.getString(0);
+			txtTP.setText(" "+tenTP);
 		}
-		if(phongBan.idTP==0){
-			txtPP.setText(txtPP.getText()+" Chưa có");
+		if(phongBan.idPP==0){
+			txtPP.setText(" Chưa có");
 		}else{
-			txtPP.setText(txtPP.getText()+" "+phongBan.idPP+"");
+			SQLiteDatabase database=Database.initDatabase(context, DATABASE_NAME);
+			Cursor cursor=database.rawQuery("select Ten from NhanVien where ID=?", new String[]{phongBan.idPP+""});
+			cursor.moveToFirst();
+			String tenPP=cursor.getString(0);
+			txtTP.setText(" "+tenPP);
 		}
 		return row;
 	}

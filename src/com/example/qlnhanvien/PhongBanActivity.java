@@ -26,7 +26,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class PhongBanActivity extends ActionBarActivity {
-	final String DATABASE_NAME="QLNhanVien.db";
+	final String DATABASE_NAME="QLNV.db";
 	SQLiteDatabase database;
 	ListView listViewPB;
 	ArrayList<PhongBan> listPB;
@@ -151,7 +151,7 @@ public class PhongBanActivity extends ActionBarActivity {
 		dialog.show();
 	}
 	protected void delete(int idPB) {
-		SQLiteDatabase database=Database.initDatabase(this, "QLNhanVien.db");
+		SQLiteDatabase database=Database.initDatabase(this, DATABASE_NAME);
 		database.delete("PhongBan", "ID=?", new String[]{idPB+""});
 		readData();
 		

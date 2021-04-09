@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class AddPBActitivy extends ActionBarActivity {
-	final String DATABASE_NAME="QLNhanVien.db";
+	final String DATABASE_NAME="QLNV.db";
 	Button btnLuuPB,btnHuyPB;
 	EditText edtTenPB;
 	@Override

@@ -9,21 +9,13 @@
     tools:context="com.example.qlnhanvien.AddChucVu" >
 
     <ListView
-        android:id="@+id/lvChucVu"
+        android:id="@+id/listViewCV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView1" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
 
     </ListView>
-
-    <TextView
-       android:id="@+id/textView1"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/listView"
-         android:background="#008000"
-         android:text="Danh sách nhân viên:"
-         android:textSize="20sp"
-         android:textStyle="bold" />
 
 </RelativeLayout>

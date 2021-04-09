@@ -9,5 +9,6 @@
     <string name="title_activity_phong_ban">PhongBanActivity</string>
     <string name="title_activity_add_pbactitivy">AddPBActitivy</string>
     <string name="title_activity_add_chuc_vu">AddChucVu</string>
+    <string name="title_activity_update_nv">UpdateNVActivity</string>
 
 </resources>

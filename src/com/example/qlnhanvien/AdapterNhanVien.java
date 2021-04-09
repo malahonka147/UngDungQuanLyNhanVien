@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class AdapterNhanVien extends BaseAdapter{
@@ -54,11 +55,10 @@ public class AdapterNhanVien extends BaseAdapter{
 		LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View row=inflater.inflate(R.layout.listview_row, null);
 		ImageView imgHinhDaiDien = (ImageView) row.findViewById(R.id.imgHinhDaiDien);
-		TextView txtid=(TextView) row.findViewById(R.id.txtIDPB);
+		TextView txtid=(TextView) row.findViewById(R.id.txtID);
 		TextView txtTen=(TextView) row.findViewById(R.id.txtTen);
 		TextView txtSDT=(TextView) row.findViewById(R.id.txtSDT);
-		Button btnSua=(Button) row.findViewById(R.id.btnSua);
-		Button btnXoa=(Button) row.findViewById(R.id.btnXoa);
+		
 		
 		final NhanVien nhanVien=list.get(position);
 		idPB=nhanVien.idPB;
@@ -67,64 +67,8 @@ public class AdapterNhanVien extends BaseAdapter{
 		txtSDT.setText(txtSDT.getText()+" "+nhanVien.sdt);
 		Bitmap bmHinhDaiDien=BitmapFactory.decodeByteArray(nhanVien.anh, 0, nhanVien.anh.length);
 		imgHinhDaiDien.setImageBitmap(bmHinhDaiDien);
-		btnSua.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent=new Intent (context,UpdateActivity.class);
-				intent.putExtra("ID", nhanVien.id);
-				context.startActivity(intent);
-			}
-		});
-		btnXoa.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				AlertDialog.Builder builder =new AlertDialog.Builder(context);
-				builder.setIcon(android.R.drawable.ic_delete);
-				builder.setTitle("Xác nhận xóa");
-				builder.setMessage("Bạn có chắc chắn xóa nhân viên này?");
-				builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						delete(nhanVien.id);
-						
-					}
-				});
-				builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						
-					}
-				});
-				AlertDialog dialog=builder.create();
-				dialog.show();
-				
-			}
-		});
 		return row;
 	
 	}
-	private void delete(int idNV){
-		SQLiteDatabase database=Database.initDatabase(context, "QLNhanVien.db");
-		database.delete("NhanVien", "ID=?", new String[]{idNV+""});
-		list.clear();
-		Cursor cursor=database.rawQuery("select * from NhanVien where idPB=? ", new String[]{idPB+""});
-		while(cursor.moveToNext()){
-			int id = cursor.getInt(0);
-			String ten=cursor.getString(1);
-			String SDT=cursor.getString(2);
-			byte[] anh =cursor.getBlob(3);
-			int idPB=cursor.getInt(4);
-			list.add(new NhanVien(id, ten, SDT, anh,idPB));
-			
-		}
-		notifyDataSetChanged();
-	}
-	
 
 }

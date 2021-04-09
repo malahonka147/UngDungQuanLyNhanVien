@@ -25,13 +25,14 @@ import android.widget.ImageView;
 
 public class UpdateActivity extends ActionBarActivity {
 	private static final int REQUEST_TAKE_PHOTO = 0;
-	final String DATABASE_NAME="QLNhanVIen.db";
+	final String DATABASE_NAME="QLNV.db";
 	final int RESQUEST_TAKE_PHOTO=123;
 	final int REQUEST_CHOOSE_PHOTO=321;
 	int id=-1;
 	Button btnChonHinh,btnChupHinh,btnLuu,btnHuy;
 	EditText edtTen,edtSDT;
 	ImageView imgHinhDaiDien;
+	int idPB;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +47,12 @@ public class UpdateActivity extends ActionBarActivity {
 		Intent intent=getIntent();
 		id=intent.getIntExtra("ID", -1);
 		SQLiteDatabase database = Database.initDatabase(this, DATABASE_NAME);
-   	 	Cursor cursor=database.rawQuery("select* from NhanVien where ID=?", new String[]{id+""});
+   	 	Cursor cursor=database.rawQuery("select * from NhanVien where ID=?", new String[]{id+""});
 		cursor.moveToFirst();
 		String ten=cursor.getString(1);
 		String sdt=cursor.getString(2);
 		byte[] anh=cursor.getBlob(3);
+		idPB=cursor.getInt(4);
 		Bitmap bitmap=BitmapFactory.decodeByteArray(anh, 0, anh.length);
 		imgHinhDaiDien.setImageBitmap(bitmap);
 		edtTen.setText(ten);
@@ -132,6 +134,7 @@ public class UpdateActivity extends ActionBarActivity {
 	}
 	private void cancel() {
 			Intent intent=new Intent(this,MainActivity.class);
+			intent.putExtra("IDPB", idPB);
 			startActivity(intent);
 			
 		}
@@ -145,9 +148,10 @@ public class UpdateActivity extends ActionBarActivity {
 		contentValues.put("SDT", sdt);
 		contentValues.put("Anh", anh);
 		
-		SQLiteDatabase database=Database.initDatabase(this, "QLNhanVIen.db");
+		SQLiteDatabase database=Database.initDatabase(this, DATABASE_NAME);
 		database.update("NhanVien", contentValues, "id=?", new String[]{id+""});
 		Intent intent=new Intent(this,MainActivity.class);
+		intent.putExtra("IDPB", idPB);
 		startActivity(intent);
 	}
 	@Override

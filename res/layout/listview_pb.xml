@@ -2,11 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" 
-    android:background="#C0C0C0">
+    android:background="#C0C0C0"
+    android:orientation="vertical" >
 
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
             android:id="@+id/txtIDPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="Tên PB:" />
+
+        <TextView
+            android:id="@+id/txtTenPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -14,25 +43,37 @@
             android:text="ID:" />
 
         <TextView
-            android:id="@+id/txtTenPB"
+            android:id="@+id/textview4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txtIDPB"
-            android:text="Tên phòng ban:" />
+            android:layout_below="@+id/textView2"
+            android:text="Trưởng phòng:" />
 
         <TextView
             android:id="@+id/txtTP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txtTenPB"
-            android:text="Trưởng phòng:" />
+            android:layout_alignBaseline="@+id/textview4"
+            android:layout_toRightOf="@+id/textview4"
+            android:text="TextView" />
 
         <TextView
-            android:id="@+id/txtPB"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textview4"
             android:text="Phó phòng:" />
+
+        <TextView
+            android:id="@+id/txtPP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview4"
+            android:layout_toRightOf="@+id/textView3"
+            android:text="TextView" />
+
+    </RelativeLayout>
 
 </LinearLayout>

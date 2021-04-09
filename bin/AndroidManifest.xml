@@ -42,6 +42,10 @@
             android:name=".AddChucVu"
             android:label="@string/title_activity_add_chuc_vu" >
         </activity>
+        <activity
+            android:name=".UpdateNVActivity"
+            android:label="@string/title_activity_update_nv" >
+        </activity>
     </application>
 
 </manifest>

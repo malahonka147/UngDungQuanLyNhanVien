@@ -22,7 +22,7 @@ import android.widget.ImageView;
 
 public class AddActivity extends ActionBarActivity {
 	private static final int REQUEST_TAKE_PHOTO = 0;
-	final String DATABASE_NAME="QLNhanVien.db";
+	final String DATABASE_NAME="QLNV.db";
 	final int RESQUEST_TAKE_PHOTO=123;
 	final int REQUEST_CHOOSE_PHOTO=321;
 	int id=-1;
@@ -120,7 +120,7 @@ public class AddActivity extends ActionBarActivity {
 		contentValues.put("SDT", sdt);
 		contentValues.put("Anh", anh);
 		contentValues.put("idPB", idPB);
-		SQLiteDatabase database=Database.initDatabase(this, "QLNhanVien.db");
+		SQLiteDatabase database=Database.initDatabase(this, DATABASE_NAME);
 		database.insert("NhanVien", null,contentValues);
 		Intent intent=new Intent(this,MainActivity.class);
 		intent.putExtra("IDPB", id);
