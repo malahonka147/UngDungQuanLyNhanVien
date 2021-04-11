@@ -75,7 +75,7 @@ public class PhongBanAdapter extends BaseAdapter {
 			Cursor cursor=database.rawQuery("select Ten from NhanVien where ID=?", new String[]{phongBan.idPP+""});
 			cursor.moveToFirst();
 			String tenPP=cursor.getString(0);
-			txtTP.setText(" "+tenPP);
+			txtPP.setText(" "+tenPP);
 		}
 		return row;
 	}

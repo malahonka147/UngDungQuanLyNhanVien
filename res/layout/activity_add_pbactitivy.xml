@@ -6,40 +6,50 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.qlnhanvien.AddPBActitivy" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:text="Tên phòng ban:" />
+    tools:context="com.example.qlnhanvien.AddPBActitivy"
+    android:background="@drawable/background" >
 
     <EditText
         android:id="@+id/edtTenPB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/textView1"
-        android:ems="10" />
+        android:layout_marginTop="14dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtTenPB"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="172dp"
+        android:text="Tên phòng ban:" />
 
     <Button
         android:id="@+id/btnLuuPB"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/edtTenPB"
-        android:text="Lưu" />
+        android:text="Lưu"
+        android:background="#c82e31"
+         android:textColor="#ffff" />
 
     <Button
         android:id="@+id/btnHuyPB"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btnLuuPB"
         android:layout_alignBottom="@+id/btnLuuPB"
-        android:layout_alignRight="@+id/edtTenPB"
-        android:layout_marginRight="22dp"
-        android:text="Hủy" />
+        android:layout_alignParentRight="true"
+        android:text="Hủy"
+        android:background="#c82e31"
+         android:textColor="#ffff" />
 
 </RelativeLayout>

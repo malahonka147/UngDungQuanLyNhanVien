@@ -112,6 +112,9 @@ public class PhongBanActivity extends ActionBarActivity {
 		case R.id.ThemTP:
 			ThemChucVu();
 			break;
+		case R.id.SuaPB:
+			SuaPB();
+			break;
 		case R.id.XoaPB:
 			XoaPB();
 			break;
@@ -119,6 +122,12 @@ public class PhongBanActivity extends ActionBarActivity {
 			break;
 		}
 		return super.onContextItemSelected(item);
+	}
+	private void SuaPB() {
+		Intent intent=new Intent(this,SuaPBActivity.class);
+		intent.putExtra("ID", PBSelected.id);
+		startActivity(intent);
+		
 	}
 	private void ThemChucVu() {
 		Intent intent=new Intent(this,AddChucVu.class);
@@ -130,7 +139,7 @@ public class PhongBanActivity extends ActionBarActivity {
 		AlertDialog.Builder builder =new AlertDialog.Builder(this);
 		builder.setIcon(android.R.drawable.ic_delete);
 		builder.setTitle("Xác nhận xóa");
-		builder.setMessage("Bạn có chắc chắn xóa nhân viên này?");
+		builder.setMessage("Bạn có chắc chắn xóa phòng ban này?");
 		builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
 			
 			@Override

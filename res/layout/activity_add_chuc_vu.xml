@@ -6,16 +6,29 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.qlnhanvien.AddChucVu" >
+    tools:context="com.example.qlnhanvien.AddChucVu" 
+    android:background="@drawable/background">
 
     <ListView
         android:id="@+id/listViewCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true" >
 
     </ListView>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/listViewCV"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/listViewCV"
+        android:text="Trở về"
+        android:background="#c82e31"
+         android:textColor="#ffff" />
 
 </RelativeLayout>

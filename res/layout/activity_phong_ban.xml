@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.qlnhanvien.PhongBanActivity" >
+    tools:context="com.example.qlnhanvien.PhongBanActivity"
+    android:background="@drawable/background" >
 
      <ListView
          android:id="@+id/listViewPB"
@@ -25,7 +26,9 @@
          android:layout_alignParentBottom="true"
          android:layout_alignParentLeft="true"
          android:layout_alignRight="@+id/listViewPB"
-         android:text="Thêm Phòng Ban" />
+         android:text="Thêm Phòng Ban"
+         android:background="#c82e31"
+         android:textColor="#ffff"/>
 
      <TextView
          android:id="@+id/textView1"
@@ -34,9 +37,9 @@
          android:layout_alignLeft="@+id/listViewPB"
          android:layout_alignParentRight="true"
          android:layout_alignParentTop="true"
-         android:background="#008000"
+         android:background="#c82e31"
          android:text="Danh sách phòng ban:"
          android:textSize="20sp"
-         android:textStyle="bold" />
+         android:textColor="#ffff" />
 
 </RelativeLayout>

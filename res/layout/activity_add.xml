@@ -7,91 +7,160 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.qlnhanvien.AddActivity" >
-<Button
-        android:id="@+id/btnChupHinh"
+<ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/imgHinhDaiDien"
-        android:layout_marginRight="30dp"
-        android:text="CHỤP HÌNH" />
-
-    <Button
-        android:id="@+id/btnChonHinh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnChupHinh"
-        android:layout_below="@+id/btnChupHinh"
-        android:layout_marginTop="16dp"
-        android:text="CHỌN HÌNH" />
-
-    <ImageView
-        android:id="@+id/imgHinhDaiDien"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_above="@+id/btnLuuPB"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
-
-    <EditText
-        android:id="@+id/edtTen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:ems="10" >
+        android:layout_alignParentTop="true" >
 
-        <requestFocus />
-    </EditText>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="365dp" >
 
-    <EditText
-        android:id="@+id/edtSdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edtTen"
-        android:layout_below="@+id/edtTen"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:inputType="phone" />
+            <Button
+                android:id="@+id/btnChupHinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/imgHinhDaiDien"
+                android:layout_marginRight="30dp"
+                android:text="CHỤP HÌNH"/>
+
+            <Button
+                android:id="@+id/btnChonHinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btnChupHinh"
+                android:layout_below="@+id/btnChupHinh"
+                android:layout_marginTop="16dp"
+                android:text="CHỌN HÌNH" />
+
+            <ImageView
+                android:id="@+id/imgHinhDaiDien"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/imgHinhDaiDien"
+                android:layout_marginTop="19dp"
+                android:text="Tên:" />
+
+            <EditText
+                android:id="@+id/edtTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView1"
+                android:layout_alignBottom="@+id/textView1"
+                android:layout_alignRight="@+id/editText1"
+                android:layout_toRightOf="@+id/textView1"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="SDT:" />
+
+            <EditText
+                android:id="@+id/edtsdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/edtTen"
+                android:layout_below="@+id/edtTen"
+                android:layout_toRightOf="@+id/textView2"
+                android:ems="10"
+                android:inputType="phone" >
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/edtsdt"
+                android:layout_marginTop="15dp"
+                android:text="Email:" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView3"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_alignRight="@+id/edtsdt"
+                android:layout_toRightOf="@+id/textView4"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/edtEmail"
+                android:layout_marginTop="14dp"
+                android:text="Địa chỉ:" />
+
+            <EditText
+                android:id="@+id/edtDiaChi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView4"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/edtQueQuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/edtDiaChi"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edtQueQuan"
+                android:layout_alignBottom="@+id/edtQueQuan"
+                android:layout_alignParentLeft="true"
+                android:text="Quê quán:" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+ 	<Button
+ 	    android:id="@+id/btnLuuPB"
+ 	    android:layout_width="140dp"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_alignParentBottom="true"
+ 	    android:layout_alignParentLeft="true"
+ 	    android:text="Lưu" />
 
     <Button
         android:id="@+id/btnHuy"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnChonHinh"
-        android:layout_alignRight="@+id/btnChonHinh"
-        android:layout_below="@+id/edtSdt"
-        android:layout_marginTop="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/scrollView1"
         android:text="Hủy" />
-
-    <Button
-        android:id="@+id/btnLuu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnHuy"
-        android:layout_alignBottom="@+id/btnHuy"
-        android:layout_alignLeft="@+id/imgHinhDaiDien"
-        android:layout_alignRight="@+id/imgHinhDaiDien"
-        android:text="Lưu" />
-
-    <TextView
-        android:id="@+id/txtTenPB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/edtSdt"
-        android:layout_alignLeft="@+id/btnLuuPB"
-        android:layout_alignTop="@+id/edtTen"
-        android:layout_toLeftOf="@+id/edtTen"
-        android:text="Họ tên:"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/edtSdt"
-        android:layout_alignLeft="@+id/btnLuuPB"
-        android:layout_alignTop="@+id/edtSdt"
-        android:text="SDT:"
-        android:textSize="20sp" />
 </RelativeLayout>

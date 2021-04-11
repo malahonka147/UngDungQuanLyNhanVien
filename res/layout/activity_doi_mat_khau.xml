@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.qlnhanvien.DoiMatKhauActivity" 
+    android:background="@drawable/background">
+
+        <EditText
+            android:id="@+id/edtUsername"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txtUsername"
+            android:layout_below="@+id/txtUsername"
+            android:ems="10"
+            android:textColor="#000000" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txtPassword"
+            android:layout_below="@+id/txtPassword"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textColor="#000000" />
+
+         <TextView
+             android:id="@+id/txtPassword"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/edtUsername"
+             android:layout_below="@+id/edtUsername"
+             android:text="Mật khẩu:"
+             android:textAppearance="?android:attr/textAppearanceLarge"
+             android:textColor="#000000"
+             android:textSize="20sp" />
+
+         <EditText
+             android:id="@+id/edtNewPassword"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/txtMKM"
+             android:layout_below="@+id/txtMKM"
+             android:ems="10"
+             android:inputType="textPassword"
+             android:textColor="#000000" />
+
+         <TextView
+             android:id="@+id/TextView01"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/edtNewPassword"
+             android:layout_below="@+id/edtNewPassword"
+             android:text="Nhập lại mật khẩu mới:"
+             android:textAppearance="?android:attr/textAppearanceLarge"
+             android:textColor="#000000"
+             android:textSize="20sp" />
+
+         <EditText
+             android:id="@+id/edtConfimPassword"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/TextView01"
+             android:layout_below="@+id/TextView01"
+             android:ems="10"
+             android:inputType="textPassword"
+             android:textColor="#000000" />
+
+         <TextView
+             android:id="@+id/txtUsername"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:layout_centerHorizontal="true"
+             android:layout_marginTop="40dp"
+             android:text="Tài khoản:"
+             android:textAppearance="?android:attr/textAppearanceLarge"
+             android:textColor="#000000"
+             android:textSize="20sp" />
+
+         <TextView
+             android:id="@+id/txtMKM"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/edtPassword"
+             android:layout_below="@+id/edtPassword"
+             android:text="Mật khẩu mới:"
+             android:textAppearance="?android:attr/textAppearanceLarge"
+             android:textColor="#000000"
+             android:textSize="20sp" />
+
+         <Button
+             android:id="@+id/btnDoiMatKhau"
+             android:layout_width="145dp"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/edtConfimPassword"
+             android:layout_centerHorizontal="true"
+             android:layout_marginTop="39dp"
+             android:background="#c82e31"
+             android:text="Đổi mật khẩu"
+             android:textColor="#ffff"
+             android:textSize="20sp" />
+
+</RelativeLayout>

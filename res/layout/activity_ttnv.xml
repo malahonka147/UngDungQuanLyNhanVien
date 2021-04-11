@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.qlnhanvien.TTNVActivity" 
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/imgHinhDaiDien"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Trở về" 
+        android:background="#c82e31"
+         android:textColor="#ffff"/>
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgHinhDaiDien"
+        android:layout_below="@+id/imgHinhDaiDien"
+        android:layout_marginTop="27dp"
+        android:text="Email: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtQueQuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBack"
+        android:layout_alignLeft="@+id/btnBack"
+        android:layout_marginBottom="52dp"
+        android:text="Quê quán:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imgHinhDaiDien"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/imgHinhDaiDien"
+        android:text="ID: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtSDT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imgHinhDaiDien"
+        android:layout_alignLeft="@+id/txtTen"
+        android:text="SDT:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtTen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtID"
+        android:layout_below="@+id/txtID"
+        android:layout_marginTop="18dp"
+        android:text="Tên: "
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/edtQueQuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBack"
+        android:layout_alignLeft="@+id/txtQueQuan"
+        android:layout_alignRight="@+id/btnBack"
+        android:layout_marginBottom="14dp"
+        android:editable="false"
+        android:ems="10"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/txtDiaChi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtEmail"
+        android:layout_below="@+id/edtEmail"
+        android:text="Địa chỉ:"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/edtDiaChi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtDiaChi"
+        android:layout_alignRight="@+id/edtEmail"
+        android:layout_below="@+id/txtDiaChi"
+        android:editable="false"
+        android:ems="10"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtEmail"
+        android:layout_alignRight="@+id/edtSDT"
+        android:layout_below="@+id/txtEmail"
+        android:editable="false"
+        android:ems="10"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/edtID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtTen"
+        android:layout_alignLeft="@+id/edtTen"
+        android:layout_alignRight="@+id/edtTen"
+        android:editable="false"
+        android:ems="10"
+        android:textSize="12sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtSDT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtSDT"
+        android:layout_alignLeft="@+id/edtTen"
+        android:editable="false"
+        android:ems="10"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/edtTen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtTen"
+        android:layout_toRightOf="@+id/txtTen"
+        android:editable="false"
+        android:ems="10"
+        android:textSize="12sp" />
+
+</RelativeLayout>

@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -64,6 +65,20 @@ public class MainActivity extends ActionBarActivity {
 				intent.putExtra("IDPB", id);
 				startActivity(intent);
 			}
+		});
+    	listView.setClickable(true);
+    	listView.setOnItemClickListener(new OnItemClickListener() {
+    		
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				NVSelected=list.get(position);
+				Intent intent =new Intent(MainActivity.this,TTNVActivity.class);
+				intent.putExtra("ID", NVSelected.id);
+				startActivity(intent);
+				
+			}
+    		
 		});
     	registerForContextMenu(listView);
     	listView.setOnItemLongClickListener(new OnItemLongClickListener() {

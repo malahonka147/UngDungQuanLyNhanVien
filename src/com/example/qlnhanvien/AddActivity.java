@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class AddActivity extends ActionBarActivity {
 	private static final int REQUEST_TAKE_PHOTO = 0;
@@ -27,15 +28,18 @@ public class AddActivity extends ActionBarActivity {
 	final int REQUEST_CHOOSE_PHOTO=321;
 	int id=-1;
 	Button btnChonHinh,btnChupHinh,btnLuu,btnHuy;
-	EditText edtTen,edtSDT;
+	EditText edtTen,edtSDT,edtEmail,edtDiaChi,edtQueQuan;
 	ImageView imgHinhDaiDien;
 	private void addControls() {
 		btnChonHinh=(Button)findViewById(R.id.btnChonHinh);
 		btnChupHinh=(Button)findViewById(R.id.btnChupHinh);
-		btnLuu=(Button)findViewById(R.id.btnLuu);
+		btnLuu=(Button)findViewById(R.id.btnLuuPB);
 		btnHuy=(Button)findViewById(R.id.btnHuy);
 		edtTen=(EditText) findViewById(R.id.edtTen);
-		edtSDT=(EditText) findViewById(R.id.edtSdt);
+		edtSDT=(EditText) findViewById(R.id.edtsdt);
+		edtEmail=(EditText) findViewById(R.id.edtEmail);
+		edtDiaChi=(EditText) findViewById(R.id.edtDiaChi);
+		edtQueQuan=(EditText) findViewById(R.id.edtQueQuan);
 		imgHinhDaiDien=(ImageView) findViewById(R.id.imgHinhDaiDien);
 		 Intent intent=getIntent();
 		 id=intent.getIntExtra("IDPB", -1);
@@ -113,13 +117,18 @@ public class AddActivity extends ActionBarActivity {
 	private void insert(){
 		String ten=edtTen.getText().toString();
 		String sdt=edtSDT.getText().toString();
+		String email=edtEmail.getText().toString();
+		String diachi=edtDiaChi.getText().toString();
+		String quequan=edtQueQuan.getText().toString();
 		byte[] anh=getByteArrayFromImageView(imgHinhDaiDien);
-		int idPB=id;
 		ContentValues contentValues=new ContentValues();
 		contentValues.put("Ten", ten);
 		contentValues.put("SDT", sdt);
 		contentValues.put("Anh", anh);
-		contentValues.put("idPB", idPB);
+		contentValues.put("IDPB", id);
+		contentValues.put("Email", email);
+		contentValues.put("DiaChi", diachi);
+		contentValues.put("QueQuan", quequan);
 		SQLiteDatabase database=Database.initDatabase(this, DATABASE_NAME);
 		database.insert("NhanVien", null,contentValues);
 		Intent intent=new Intent(this,MainActivity.class);

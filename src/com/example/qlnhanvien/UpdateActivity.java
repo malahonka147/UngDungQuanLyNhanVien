@@ -16,12 +16,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class UpdateActivity extends ActionBarActivity {
 	private static final int REQUEST_TAKE_PHOTO = 0;
@@ -30,7 +32,7 @@ public class UpdateActivity extends ActionBarActivity {
 	final int REQUEST_CHOOSE_PHOTO=321;
 	int id=-1;
 	Button btnChonHinh,btnChupHinh,btnLuu,btnHuy;
-	EditText edtTen,edtSDT;
+	EditText edtTen,edtSDT,edtEmail,edtDiaChi,edtQueQuan;
 	ImageView imgHinhDaiDien;
 	int idPB;
 	
@@ -53,10 +55,16 @@ public class UpdateActivity extends ActionBarActivity {
 		String sdt=cursor.getString(2);
 		byte[] anh=cursor.getBlob(3);
 		idPB=cursor.getInt(4);
+		String email=cursor.getString(5);
+		String DiaChi=cursor.getString(6);
+		String Quequan=cursor.getString(7);
 		Bitmap bitmap=BitmapFactory.decodeByteArray(anh, 0, anh.length);
 		imgHinhDaiDien.setImageBitmap(bitmap);
 		edtTen.setText(ten);
 		edtSDT.setText(sdt);
+		edtEmail.setText(email);
+		edtDiaChi.setText(DiaChi);
+		edtQueQuan.setText(Quequan);
 	}
 
 	private void addControls() {
@@ -65,7 +73,10 @@ public class UpdateActivity extends ActionBarActivity {
 		btnLuu=(Button)findViewById(R.id.btnLuuPB);
 		btnHuy=(Button)findViewById(R.id.btnHuy);
 		edtTen=(EditText) findViewById(R.id.edtTen);
-		edtSDT=(EditText) findViewById(R.id.edtSdt);
+		edtSDT=(EditText) findViewById(R.id.edtsdt);
+		edtEmail=(EditText) findViewById(R.id.edtEmail);
+		edtDiaChi=(EditText) findViewById(R.id.edtDiaChi);
+		edtQueQuan=(EditText) findViewById(R.id.edtQueQuan);
 		imgHinhDaiDien=(ImageView) findViewById(R.id.imgHinhDaiDien);
 
 	}
@@ -142,12 +153,17 @@ public class UpdateActivity extends ActionBarActivity {
 	private void update(){
 		String ten=edtTen.getText().toString();
 		String sdt=edtSDT.getText().toString();
+		String email=edtEmail.getText().toString();
+		String diachi=edtDiaChi.getText().toString();
+		String quequan=edtQueQuan.getText().toString();
 		byte[] anh=getByteArrayFromImageView(imgHinhDaiDien);
 		ContentValues contentValues=new ContentValues();
 		contentValues.put("Ten", ten);
 		contentValues.put("SDT", sdt);
 		contentValues.put("Anh", anh);
-		
+		contentValues.put("Email", email);
+		contentValues.put("DiaChi", diachi);
+		contentValues.put("QueQuan", quequan);
 		SQLiteDatabase database=Database.initDatabase(this, DATABASE_NAME);
 		database.update("NhanVien", contentValues, "id=?", new String[]{id+""});
 		Intent intent=new Intent(this,MainActivity.class);

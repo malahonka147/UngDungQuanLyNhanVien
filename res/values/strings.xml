@@ -10,5 +10,9 @@
     <string name="title_activity_add_pbactitivy">AddPBActitivy</string>
     <string name="title_activity_add_chuc_vu">AddChucVu</string>
     <string name="title_activity_update_nv">UpdateNVActivity</string>
+    <string name="title_activity_ttnv">TTNVActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_doi_mat_khau">DoiMatKhauActivity</string>
+    <string name="title_activity_sua_pb">SuaPBActivity</string>
 
 </resources>

@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.qlnhanvien.MainActivity" >
+    tools:context="com.example.qlnhanvien.MainActivity"
+    android:background="@drawable/background" >
 
      <ListView
          android:id="@+id/listView"
@@ -23,27 +24,30 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:layout_alignLeft="@+id/listView"
-         android:background="#008000"
          android:text="Danh sách nhân viên:"
          android:textSize="20sp"
-         android:textStyle="bold" />
+         android:background="#c82e31"
+         android:textColor="#ffff" />
 
      <Button
          android:id="@+id/btnAdd"
-         android:layout_width="wrap_content"
+         android:layout_width="140dp"
          android:layout_height="wrap_content"
          android:layout_alignParentBottom="true"
          android:layout_alignParentLeft="true"
-         android:text="Thêm nhân viên" />
+         android:background="#c82e31"
+         android:text="Thêm nhân viên"
+         android:textColor="#ffff" />
 
      <Button
          android:id="@+id/btnBack"
-         android:layout_width="wrap_content"
+         android:layout_width="140dp"
          android:layout_height="wrap_content"
          android:layout_alignBaseline="@+id/btnAdd"
          android:layout_alignBottom="@+id/btnAdd"
-         android:layout_alignRight="@+id/listView"
-         android:layout_toRightOf="@+id/btnAdd"
-         android:text="Trờ về" />
+         android:layout_alignParentRight="true"
+         android:background="#c82e31"
+         android:text="Trở về"
+         android:textColor="#ffff" />
 
 </RelativeLayout>

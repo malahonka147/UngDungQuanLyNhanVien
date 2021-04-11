@@ -25,6 +25,7 @@ public class AddChucVu extends ActionBarActivity {
 	ArrayList<NhanVien> list;
 	NhanVien NVSelected;
 	AdapterNhanVien adapter;
+	Button btnBack;
 	int id=-1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,16 +70,17 @@ public class AddChucVu extends ActionBarActivity {
 			}
 
 		});
-//    	btnBack=(Button) findViewById(R.id.btnBack);
-//    	btnBack.setOnClickListener(new View.OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				Intent intent=new Intent(MainActivity.this,PhongBanActivity.class);
-//				startActivity(intent);
-//				
-//			}
-//		});
+    	btnBack=(Button) findViewById(R.id.btnBack);
+    	btnBack.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent=new Intent(AddChucVu.this,PhongBanActivity.class);
+				startActivity(intent);
+				
+			}
+		});
+    	
     }
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
